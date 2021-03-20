@@ -12,6 +12,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CreateSurveyComponent } from './pages/create-survey/create-survey.component';
 import { SurveyPage1Component } from './pages/survey-page1/survey-page1.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

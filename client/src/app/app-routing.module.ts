@@ -13,8 +13,8 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent,data: {title: 'About'}},
   {path: 'survey', component: SurveyComponent, data: {title: 'Survey'}},
   {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},
-  {path: 'create-survey', component: CreateSurveyComponent, data: {title: 'CreateSurvey'}},
-  {path: 'survey-page1', component: SurveyPage1Component, data: {title: 'CreateSurvey'}},
+  {path: 'create-survey', component: CreateSurveyComponent, data: {title: 'Contact'}},
+  {path: 'surveypage1', component: SurveyPage1Component, data: {title: 'SurveyPage1'}},
   {path: '', redirectTo:'/home', pathMatch:'full'},
 ];
 
