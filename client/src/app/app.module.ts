@@ -10,7 +10,7 @@ import { SurveyComponent } from './pages/survey/survey.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CreateSurveyComponent } from './pages/create-survey/create-survey.component';
-import { SurveyPage1Component } from './pages/survey-page1/survey-page1.component';
+import { Surveypage1Component } from './pages/surveypage1/surveypage1.component';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { SurveyPage1Component } from './pages/survey-page1/survey-page1.componen
     AboutComponent,
     ContactComponent,
     CreateSurveyComponent,
-    SurveyPage1Component
+    Surveypage1Component,
   ],
   imports: [
     BrowserModule,
