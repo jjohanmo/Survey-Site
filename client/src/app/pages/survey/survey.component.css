@@ -22,10 +22,20 @@ body {
    font-weight: bold;
    font-size: 24px;
    }
+   .socials{
+       align-self: center;
+       text-align: center;
+   }
+
    
    @media (max-width: 800px){
        .mx-30{
            margin-bottom: 30px;
        }
    }
+
+ 
+
+
+ 
    
