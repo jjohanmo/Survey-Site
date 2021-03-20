@@ -5,7 +5,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CreateSurveyComponent } from './pages/create-survey/create-survey.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SurveyComponent } from './pages/survey/survey.component';
-import { Surveypage1Component } from './pages/surveypage1/surveypage1.component';
+import { SurveyPage1Component } from './pages/surveypage1/survey-page1.component';
 
 
 const routes: Routes = [
@@ -15,8 +15,9 @@ const routes: Routes = [
   {path: 'survey', component: SurveyComponent, data: {title: 'Survey'}},
   {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},
   {path: 'create-survey', component: CreateSurveyComponent, data: {title: 'Contact'}},
-  {path:'surveyPage1', component: Surveypage1Component, data: {title: 'SurveyPage1'}},
+  {path:'surveyPageOne', component: SurveyPage1Component, data: {title: 'SurveyPageOne'}},
   {path: '', redirectTo:'/home', pathMatch:'full'},
+  {path: '**', redirectTo: '/home'}
 ];
 
 @NgModule({
