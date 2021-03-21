@@ -18,6 +18,8 @@ import { CreateSurveyComponent } from './pages/create-survey/create-survey.compo
 import { SurveyPage1Component } from './pages/surveypage1/survey-page1.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SurveyPage2Component } from './pages/surveypage2/survey-page2.component';
+import { SurveyPage3Component } from './pages/surveypage3/survey-page3.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     ContactComponent,
     CreateSurveyComponent,
-    SurveyPage1Component
+    SurveyPage1Component,
+    SurveyPage2Component,
+    SurveyPage3Component
   ],
   imports: [
     BrowserModule,
