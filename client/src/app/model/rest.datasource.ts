@@ -7,6 +7,8 @@ import { NgModule } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { surveyPageOne } from './surveyPageOne.model';
+import { surveyPageTwo } from './surveyPageTwo.model';
+import { surveyPageThree } from './surveyPageThree.model';
 
 const PROTOCOL = 'http';
 const PORT = 5000;
@@ -41,5 +43,26 @@ export class RestDataSource
     return this.http.get<surveyPageOne[]>(this.baseUrl + 'surveyOne');
   }
 
+  saveSurveyThree(surveyThree: surveyPageThree): Observable<surveyPageThree>
+  {
+    console.log(JSON.stringify(surveyThree));
+    return this.http.post<surveyPageThree>(this.baseUrl + 'surveyThree/add', surveyThree);
+  }
+
+  getSurveyThree(): Observable<surveyPageThree[]>
+  {
+    return this.http.get<surveyPageThree[]>(this.baseUrl + 'surveyThree');
+  }
+
+  saveSurveyTwo(surveyTwo: surveyPageTwo): Observable<surveyPageTwo>
+  {
+    console.log(JSON.stringify(surveyTwo));
+    return this.http.post<surveyPageTwo>(this.baseUrl + 'surveyTwo/add', surveyTwo);
+  }
+
+  getSurveyTwo(): Observable<surveyPageTwo[]>
+  {
+    return this.http.get<surveyPageTwo[]>(this.baseUrl + 'surveyTwo');
+  }
 }
 

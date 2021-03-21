@@ -6,5 +6,9 @@
 const mappings =
 {
   get: ['/api/surveyOne', '/surveyOne'],
-  post: ['/api/surveyOne', '/book-list', 'api/categories', '/categories']
+  post: ['/api/surveyOne', '/book-list', 'api/categories', '/categories'],
+  get: ['/api/surveyTwo', '/surveyTwo'],
+  post: ['/api/surveyTwo', '/book-list', 'api/categories', '/categories'],
+  get: ['/api/surveyThree', '/surveyThree'],
+  post: ['/api/surveyThree', '/book-list', 'api/categories', '/categories']
 }

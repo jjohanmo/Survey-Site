@@ -6,6 +6,8 @@ import { CreateSurveyComponent } from './pages/create-survey/create-survey.compo
 import { HomeComponent } from './pages/home/home.component';
 import { SurveyComponent } from './pages/survey/survey.component';
 import { SurveyPage1Component } from './pages/surveypage1/survey-page1.component';
+import { SurveyPage2Component } from './pages/surveypage2/survey-page2.component';
+import { SurveyPage3Component } from './pages/surveypage3/survey-page3.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},
   {path: 'create-survey', component: CreateSurveyComponent, data: {title: 'Contact'}},
   {path:'surveyPageOne', component: SurveyPage1Component, data: {title: 'SurveyPageOne'}},
+  {path:'surveyPageTwo', component: SurveyPage2Component, data: {title: 'SurveyPageTwo'}},
+  {path:'surveyPageThree', component: SurveyPage3Component, data: {title: 'SurveyPageThree'}},
   {path: '', redirectTo:'/home', pathMatch:'full'},
   {path: '**', redirectTo: '/home'}
 ];
