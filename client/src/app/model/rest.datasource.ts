@@ -9,6 +9,10 @@ import { Observable } from 'rxjs';
 import { surveyPageOne } from './surveyPageOne.model';
 import { surveyPageTwo } from './surveyPageTwo.model';
 import { surveyPageThree } from './surveyPageThree.model';
+import { map } from 'rxjs/operators';
+import { User } from './user.model';
+//import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 const PROTOCOL = 'http';
 const PORT = 5000;
@@ -16,7 +20,11 @@ const PORT = 5000;
 @Injectable({providedIn: 'root'})
 export class RestDataSource
 {
+  
   baseUrl: string;
+  authToken: any;
+  user: any;
+  jwtService: any;
 
   private httpOptions =
   {
@@ -26,9 +34,11 @@ export class RestDataSource
     'Access-control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
     })
   };
+ 
 
   constructor(private http: HttpClient)
   {
+    this.user = new User();
     this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
   }
 
@@ -63,6 +73,41 @@ export class RestDataSource
   getSurveyTwo(): Observable<surveyPageTwo[]>
   {
     return this.http.get<surveyPageTwo[]>(this.baseUrl + 'surveyTwo');
+  }
+
+  storeUserData(token: any, user: User): void
+  {
+    localStorage.setItem('id_token', 'Bearer ' + token);
+    localStorage.setItem('user', JSON.stringify(user));
+    this.authToken = token;
+    this.user = user;
+  }
+
+  logout(): Observable<any>
+  {
+    this.authToken = null;
+    this.user = null;
+    localStorage.clear();
+
+    return this.http.get<any>(this.baseUrl + 'logout', this.httpOptions);
+  }
+
+  loggedIn(): boolean
+  {
+    return !this.jwtService.isTokenExpired(this.authToken);
+  }
+  
+  authenticate(user: User): Observable<any>
+  {
+    console.log(JSON.stringify(user));
+    return this.http.post<any>(this.baseUrl + 'login', user, this.httpOptions);
+  }
+
+  private loadToken(): void
+  {
+    const token = localStorage.getItem('id_token');
+    this.authToken = token;
+    this.httpOptions.headers = this.httpOptions.headers.set('Authorization', this.authToken);
   }
 }
 

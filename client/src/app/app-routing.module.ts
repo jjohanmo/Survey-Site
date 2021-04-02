@@ -11,7 +11,7 @@ import { SurveyPage3Component } from './pages/surveypage3/survey-page3.component
 
 
 const routes: Routes = [
-  
+  {path: 'login', data: {title: 'Login'}, redirectTo: '/admin/auth', pathMatch: 'full'},
   {path: 'home', component: HomeComponent, data: {title: 'Home'}},
   {path: 'about', component: AboutComponent,data: {title: 'About'}},
   {path: 'survey', component: SurveyComponent, data: {title: 'Survey'}},
@@ -21,11 +21,13 @@ const routes: Routes = [
   {path:'surveyPageTwo', component: SurveyPage2Component, data: {title: 'SurveyPageTwo'}},
   {path:'surveyPageThree', component: SurveyPage3Component, data: {title: 'SurveyPageThree'}},
   {path: '', redirectTo:'/home', pathMatch:'full'},
-  {path: '**', redirectTo: '/home'}
+  {path: '**', redirectTo: '/home'},
+  {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }

@@ -11,12 +11,14 @@ import { surveyPageTwo } from './surveyPageTwo.model';
 import { SurveyTwoRepository } from './surveyTwo.repository';
 import { surveyPageThree } from './surveyPageThree.model';
 import { SurveyThreeRepository } from './surveyThree.repository';
+import { AuthService } from './auth.service';
+import { AuthComponent } from '../admin/auth/auth.component';
 
 @NgModule({
   imports: [HttpClientModule],
   providers: [ surveyPageOne, SurveyOneRepository,
   {provide:'', useClass: RestDataSource},
-  RestDataSource]
+  RestDataSource,AuthService]
 })
 
 @NgModule({
@@ -30,6 +32,6 @@ import { SurveyThreeRepository } from './surveyThree.repository';
   imports: [HttpClientModule],
   providers: [ surveyPageThree, SurveyThreeRepository,
   {provide:'', useClass: RestDataSource},
-  RestDataSource]
+  RestDataSource,AuthService,AuthComponent]
 })
 export class ModelModule {}
